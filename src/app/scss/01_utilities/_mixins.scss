@@ -1,0 +1,12 @@
+@use "sass:list";
+
+// Mixin de ejemplo para aplicar sombras (shadows) consistentes
+@mixin card-shadow($level: 1) {
+  @if $level == 1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  } @else if $level == 2 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  } @else {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+}

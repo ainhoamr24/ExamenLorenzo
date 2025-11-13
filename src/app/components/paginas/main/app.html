@@ -1,0 +1,23 @@
+<div l-flex direction="column" class="g--margin-3">
+  
+  <h1>Dashboard de Ejemplo (Tema 7)</h1>
+
+  <!-- Uso de componente Panel y Botón -->
+  <c-panel titulo="Acción Requerida" tipo="advertencia" class="g--margin-top-2">
+    <p>Por favor, confirma que la estructura de la aplicación es correcta antes de continuar.</p>
+    <a c-button funcion="normal" importancia="primaria" (cClick)="alerta('Confirmado!')" class="g--margin-top-2">
+      Confirmar
+    </a>
+    <a c-button funcion="normal" importancia="terciaria" (cClick)="alerta('Cancelar')" class="g--margin-top-2">
+      Cancelar
+    </a>
+  </c-panel>
+
+  <!-- Uso de Layout Flex para centrar contenido -->
+  <div l-flex direction="row" justify="center" class="g--margin-top-4">
+      <a c-button funcion="alternativa" importancia="secundaria" (cClick)="alerta('Ayuda')">
+        Ayuda y Soporte
+      </a>
+  </div>
+
+</div>
