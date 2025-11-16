@@ -1,0 +1,35 @@
+<div class="c-articulo g--width-2">
+    <img src="{{imageUrl}}" alt="image" class="c-articulo__main-image">
+    <h3 class="c-articulo__name">{{name}}</h3>
+    
+    <p class="c-articulo__prices">
+        <span class="c-articulo__price c-articulo__price--current">{{currentPrice | currency}}</span>
+        &nbsp;
+        @if (previousPrice != currentPrice) {
+            <span class="c-articulo__price c-articulo__price--old">{{previousPrice | currency}}</span>
+        }
+    </p>
+
+    <p class="c-articulo__ratings">
+        <span class="c-articulo__rating">{{rating}}</span>
+        <span class="c-articulo__ratings-icon">⭐</span>
+        <span class="c-articulo__review-count">{{reviewCount}}</span>
+    </p>
+
+    <p class="c-articulo__shipping">
+        🚚
+        @if (deliveryPrice <= 0) {
+            <span class="c-articulo__price c-articulo__price--shipping">Envio gratis</span>
+        }
+
+        @if (deliveryDate.toDateString() != tomorrow.toDateString()) {
+            <span class="c-articulo__delivery-date">Recibir el {{deliveryDate | date:"EEEE"}} {{deliveryDate.getDay()}} {{deliveryDate | date:"LLLL"}}</span>
+        } @else {
+            <span class="c-articulo__delivery-date">Entrega mañana</span>
+        }
+    </p>
+
+    @if (otherShippingOptions) {
+        <p class="c-articulo__other-shipping">Otras opciones disponibles</p>
+    }
+</div>
